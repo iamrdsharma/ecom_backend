@@ -1,0 +1,11 @@
+const express = require("express");
+const fileUpload = require("./fileupload");
+const router = express.Router();
+const productController = require("./products.controller");
+router.post("/add", fileUpload.single("image"), productController.addProduct);
+router.get("/:id", productController.getOne);
+router.get("/all", productController.getAll);
+router.patch("/:id", fileUpload.single("image"), productController.update);
+router.patch("/activate/:id", productController.activateProduct);
+router.delete("/:id", productController.delete);
+module.exports = router;
