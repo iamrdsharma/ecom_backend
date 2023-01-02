@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const User = require("./user.model");
 exports.test = async (req, res) => {
   let users = await User.find();
-  res.json({
+  return res.json({
     status: true,
     users,
   });

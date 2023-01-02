@@ -18,7 +18,7 @@ mongoose.connection.on("connected", (err, res) => {
   console.log("mongoose is connected");
 });
 app.get("/", (req, res) => {
-  res.json({
+  return res.json({
     status: true,
     message: "Welcome to the API.",
   });

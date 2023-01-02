@@ -5,19 +5,19 @@ const jwt = require("jsonwebtoken");
 
 exports.login = async (req, res) => {
   if (!req.body) {
-    res.json({
+    return res.json({
       status: false,
       message: "Connot proceed with an empty body.",
     });
   }
   if (!req.body.email || req.body.email == "") {
-    res.json({
+    return res.json({
       status: false,
       message: "Email is required for proceeding.",
     });
   }
   if (!req.body.password || req.body.password == "") {
-    res.json({
+    return res.json({
       status: false,
       message: "Password is required for proceeding",
     });
